@@ -4,7 +4,7 @@ import "./App.scss";
 function App() {
     return (
         <div>
-            <section className="hero">
+            <section className="hero header">
                 <div className="hero-body">
                     <div className="container">
                         <img src={"/images/unicorn.svg"} className="logo image is-48x48"/>
@@ -17,7 +17,10 @@ function App() {
                     </div>
                 </div>
             </section>
-            {HomepageLayout()}
+            <div className="section">
+                {HomepageLayout()}
+            </div>
+            <footer className="footer">insert footer stuff here</footer>
         </div>
     );
 }
@@ -26,28 +29,28 @@ function HomepageLayout() {
     return (
         <div className="container">
             <div className="columns">
-                <div className="column"/>
-                {HomepageBox("home", "Housing")}
-                {HomepageBox("grow", "Financial Independence")}
-                <div className="column"/>
+                <div className="column is-hidden-mobile"/>
+                {HomepageTile("home", "Housing", "", "blue-one")}
+                {HomepageTile("grow", "Financial Independence", "", "pink-two")}
+                <div className="column is-hidden-mobile"/>
             </div>
             <div className="columns">
-                <div className="column"/>
-                {HomepageBox("family", "Family")}
-                {HomepageBox("sunbed", "Luxury")}
-                <div className="column"/>
+                <div className="column is-hidden-mobile"/>
+                {HomepageTile("family", "Family", "", "yellow")}
+                {HomepageTile("sunbed", "Luxury", "", "blue-two")}
+                <div className="column is-hidden-mobile"/>
             </div>
         </div>
     );
 }
 
-function HomepageBox(icon, label, link) {
+function HomepageTile(icon, label, link, colour) {
     return (
         <div className="column">
             <a href={link}>
-                <div className="content homepage-box">
+                <div className={`homepage-tile bg-${colour}`}>
                     <img src={`/images/${icon}.svg`} className="image" alt={label}/>
-                    {label}
+                    <p>{label}</p>
                 </div>
             </a>
         </div>

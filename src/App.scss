@@ -10,16 +10,67 @@ $blue-two: #7196d1;
 $yellow: #fec761;
 $black: #0d0809;
 
+a, a:hover, a:focus, a:active {
+  text-decoration: none;
+  color: inherit;
+}
+
+.header {
+  //background-color: $pink-one;
+  //margin-bottom: 3rem;
+}
+
 .logo {
   margin-bottom: 0.5rem;
 }
 
-.homepage-box {
+.homepage-tile {
+  transition: all 0.3s ease;
+  border-radius: 6px;
   text-align: center;
+  padding: 2rem;
+
+  p {
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    color: $black;
+  }
+
+  img {
+    width: 8rem;
+    height: 8rem;
+    margin: 0 auto;
+  }
 }
 
-.homepage-box img {
-  width: 8rem;
-  height: 8rem;
-  margin: 0 auto;
+.homepage-tile:hover {
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+
+  p {
+    color: floralwhite;
+  }
+}
+
+.footer {
+  text-align: center;
+  margin-top: 3rem;
+  padding: 3rem;
+}
+
+.bg-blue-one {
+  background-color: $blue-one;
+}
+
+.bg-pink-two {
+  background-color: $pink-two;
+}
+
+.bg-blue-two {
+  background-color: $blue-two;
+}
+
+.bg-yellow {
+  background-color: $yellow;
 }
